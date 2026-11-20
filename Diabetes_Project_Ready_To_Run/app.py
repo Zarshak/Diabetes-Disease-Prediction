@@ -10,8 +10,8 @@ st.title("🩺 Diabetes Disease Prediction")
 st.write("Enter the health measurements below to see the output of the trained machine-learning model.")
 ROOT = Path(__file__).resolve().parent
 
-MODEL_PATH = Path("models/diabetes_model.pkl")
-FEATURES_PATH = Path("models/features.json")
+MODEL_PATH = ROOT / "models" / "diabetes_model.pkl"
+FEATURES_PATH = ROOT / "models" / "features.json"
 
 if not MODEL_PATH.exists() or not FEATURES_PATH.exists():
     st.error("The model has not been trained yet. First run: python train_model.py")
