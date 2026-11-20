@@ -8,6 +8,7 @@ import streamlit as st
 st.set_page_config(page_title="Diabetes Prediction", page_icon="🩺", layout="centered")
 st.title("🩺 Diabetes Disease Prediction")
 st.write("Enter the health measurements below to see the output of the trained machine-learning model.")
+ROOT = Path(__file__).resolve().parent
 
 MODEL_PATH = Path("models/diabetes_model.pkl")
 FEATURES_PATH = Path("models/features.json")
