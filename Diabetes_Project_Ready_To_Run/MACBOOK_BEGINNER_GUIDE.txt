@@ -1,0 +1,88 @@
+DIABETES DISEASE PREDICTION USING MACHINE LEARNING
+MACBOOK BEGINNER GUIDE
+
+This project package contains:
+- PROJECT_SYNOPSIS.docx
+- PROJECT_REPORT_Phase_II.docx
+- app.py (Streamlit web application)
+- train_model.py (trains and compares four machine-learning models)
+- requirements.txt (Python libraries)
+- run_mac.command (Mac launcher)
+- run_project.bat (Windows launcher)
+
+PART A — PREPARE YOUR MACBOOK
+1. Connect your MacBook to the internet.
+2. Open Safari and visit https://www.python.org/downloads/macos/
+3. Download and install Python 3.11 or newer for macOS.
+4. Open the Terminal app:
+   - Press Command + Space.
+   - Type Terminal.
+   - Press Enter.
+5. Type this command and press Enter:
+   python3 --version
+6. It should display a Python 3 version. If it says command not found, install Python again from python.org and reopen Terminal.
+
+PART B — EXTRACT THE PROJECT
+1. Find the downloaded ZIP file in Downloads.
+2. Double-click it. macOS will extract a project folder.
+3. Keep that folder in Downloads or on the Desktop.
+
+PART C — OPEN THE PROJECT FOLDER IN TERMINAL
+Easiest method:
+1. Open Terminal.
+2. Type: cd 
+   (type cd followed by one space; do not press Enter yet)
+3. Drag the extracted project folder from Finder into the Terminal window.
+4. Press Enter.
+5. Type: ls
+   You should see app.py, train_model.py and requirements.txt.
+
+PART D — INSTALL AND TRAIN
+Copy and run these commands one at a time:
+
+python3 -m venv .venv
+
+source .venv/bin/activate
+
+python -m pip install --upgrade pip
+
+pip install -r requirements.txt
+
+python train_model.py
+
+The first setup downloads the public dataset and Python libraries. Keep internet connected.
+Training compares Logistic Regression, Decision Tree, Random Forest and K-Nearest Neighbors.
+When successful, it saves the selected model in the models folder and creates model_comparison.csv.
+The actual measured results are shown in the Terminal and saved in model_comparison.csv.
+
+PART E — START THE WEB APPLICATION
+In the same Terminal window, run:
+
+python -m streamlit run app.py
+
+A browser tab should open. If it does not, copy the Local URL printed in Terminal (usually http://localhost:8501) into Safari or Chrome.
+Keep Terminal open while demonstrating. To stop the application, click Terminal and press Control + C.
+
+PART F — DEMO INPUTS
+Use these example values only:
+Pregnancies: 2
+Glucose: 120
+Blood pressure: 70
+Skin thickness: 20
+Insulin: 80
+BMI: 28
+Diabetes pedigree function: 0.5
+Age: 30
+
+Press Predict and show the result. These are sample values, not a real person's health data.
+
+COMMON PROBLEMS
+1. "python3: command not found": Install Python from python.org and reopen Terminal.
+2. "No such file or directory": Check that Terminal is inside the extracted project folder. Use ls to check.
+3. Dataset download error: Check internet connection and run python train_model.py again.
+4. Port 8501 already in use: Run python -m streamlit run app.py --server.port 8502 and open the URL shown.
+5. Package installation fails: Check internet, then run pip install -r requirements.txt again.
+
+IMPORTANT ACADEMIC NOTE
+Do not invent or claim model accuracy. Report only the metrics printed after training and saved in model_comparison.csv.
+This is an academic prototype using a limited dataset. It is not a medical diagnosis tool and must not replace a healthcare professional.
